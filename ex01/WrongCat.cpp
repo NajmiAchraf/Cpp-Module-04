@@ -1,29 +1,30 @@
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() : msg("Cat") {
-	this->type = "Cat";
+
+WrongCat::WrongCat() : msg("WrongCat") {
+	this->type = "WrongCat";
 	std::cout << this->message() << "Default constructor" << std::endl;
 }
 
-Cat::Cat(const Cat &cat) {
+WrongCat::WrongCat(const WrongCat &cat) {
 	std::cout << this->message() << "Copy constructor" << std::endl;
 	*this = cat;
 }
 
-Cat &Cat::operator = (const Cat &cat) {
+WrongCat &WrongCat::operator = (const WrongCat &cat) {
 	std::cout << this->message() << "Copy assignment constructor" << std::endl;
 	this->type = cat.getType();
 	return (*this);
 }
 
-Cat::~Cat() {
+WrongCat::~WrongCat() {
 	std::cout << this->message() << "Destructor" << std::endl;
 }
 
-void Cat::makeSound() const {
+void WrongCat::makeSound() const {
 	std::cout << "meow ฅ(^◕ᴥ◕^)ฅ" << std::endl;
 }
 
-std::string Cat::message() {
+std::string WrongCat::message() {
 	return (this->msg + " ● ");
 }

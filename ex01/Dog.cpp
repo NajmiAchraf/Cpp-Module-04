@@ -1,29 +1,30 @@
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat() : msg("Cat") {
-	this->type = "Cat";
+Dog::Dog() : msg("Dog") {
+	this->type = "Dog";
 	std::cout << this->message() << "Default constructor" << std::endl;
 }
 
-Cat::Cat(const Cat &cat) {
+Dog::Dog(const Dog &dog) {
 	std::cout << this->message() << "Copy constructor" << std::endl;
-	*this = cat;
+	*this = dog;
 }
 
-Cat &Cat::operator = (const Cat &cat) {
+Dog &Dog::operator = (const Dog &dog) {
 	std::cout << this->message() << "Copy assignment constructor" << std::endl;
-	this->type = cat.getType();
+	this->type = dog.getType();
 	return (*this);
 }
 
-Cat::~Cat() {
+Dog::~Dog() {
 	std::cout << this->message() << "Destructor" << std::endl;
 }
 
-void Cat::makeSound() const {
-	std::cout << "meow ฅ(^◕ᴥ◕^)ฅ" << std::endl;
+void Dog::makeSound() const {
+	std::cout << "bark ∪( ●ᴥ ●)∪" << std::endl;
 }
 
-std::string Cat::message() {
+std::string Dog::message() {
 	return (this->msg + " ● ");
 }
+
