@@ -27,6 +27,7 @@ SRCS = \
 	Animal.cpp		\
 	Dog.cpp			\
 	Cat.cpp			\
+	Brain.cpp		\
 	WrongAnimal.cpp	\
 	WrongCat.cpp
 

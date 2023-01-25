@@ -2,6 +2,7 @@
 
 Cat::Cat() : msg("Cat") {
 	this->type = "Cat";
+	this->brain = new Brain();
 	std::cout << this->message() << "Default constructor" << std::endl;
 }
 
@@ -17,6 +18,7 @@ Cat &Cat::operator = (const Cat &cat) {
 }
 
 Cat::~Cat() {
+	delete this->brain;
 	std::cout << this->message() << "Destructor" << std::endl;
 }
 

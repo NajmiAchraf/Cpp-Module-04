@@ -3,6 +3,7 @@
 
 WrongCat::WrongCat() : msg("WrongCat") {
 	this->type = "WrongCat";
+	this->brain = new Brain();
 	std::cout << this->message() << "Default constructor" << std::endl;
 }
 
@@ -18,6 +19,7 @@ WrongCat &WrongCat::operator = (const WrongCat &cat) {
 }
 
 WrongCat::~WrongCat() {
+	delete this->brain;
 	std::cout << this->message() << "Destructor" << std::endl;
 }
 

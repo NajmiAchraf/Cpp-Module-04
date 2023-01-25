@@ -4,13 +4,13 @@ std::string Brain::getIdea(int i) const {
 	return this->ideas[i];
 }
 
-void Brain::setIdea(int i, int idea) {
+void Brain::setIdea(int i, std::string idea) {
 	this->ideas[i] = idea;
 }
 
 Brain::Brain() {
 	std::cout << "Brain Default constructor" << std::endl;
-	for (int i = 0; i < ; ++i)
+	for (int i = 0; i < 100; ++i)
 		this->setIdea(i, "empty");
 }
 

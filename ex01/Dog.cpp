@@ -2,6 +2,7 @@
 
 Dog::Dog() : msg("Dog") {
 	this->type = "Dog";
+	this->brain = new Brain();
 	std::cout << this->message() << "Default constructor" << std::endl;
 }
 
@@ -17,6 +18,7 @@ Dog &Dog::operator = (const Dog &dog) {
 }
 
 Dog::~Dog() {
+	delete this->brain;
 	std::cout << this->message() << "Destructor" << std::endl;
 }
 
