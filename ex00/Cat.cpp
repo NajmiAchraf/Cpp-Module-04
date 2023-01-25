@@ -5,7 +5,7 @@ Cat::Cat() : msg("Cat") {
 	std::cout << this->message() << "Default constructor" << std::endl;
 }
 
-Cat::Cat(const Cat &cat) {
+Cat::Cat(const Cat &cat) : Animal(cat) {
 	std::cout << this->message() << "Copy constructor" << std::endl;
 	*this = cat;
 }

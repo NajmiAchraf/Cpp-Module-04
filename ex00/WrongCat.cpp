@@ -6,7 +6,7 @@ WrongCat::WrongCat() : msg("WrongCat") {
 	std::cout << this->message() << "Default constructor" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &cat) {
+WrongCat::WrongCat(const WrongCat &cat) : WrongAnimal(cat) {
 	std::cout << this->message() << "Copy constructor" << std::endl;
 	*this = cat;
 }

@@ -5,7 +5,7 @@ Dog::Dog() : msg("Dog") {
 	std::cout << this->message() << "Default constructor" << std::endl;
 }
 
-Dog::Dog(const Dog &dog) {
+Dog::Dog(const Dog &dog) : Animal(dog) {
 	std::cout << this->message() << "Copy constructor" << std::endl;
 	*this = dog;
 }
