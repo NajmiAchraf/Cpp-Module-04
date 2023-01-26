@@ -14,6 +14,8 @@ private:
 
 public:
 
+	Brain	*getBrain() const;
+
 	Dog();
 	Dog(const Dog &dog);
 	Dog &operator = (const Dog &dog);

@@ -4,10 +4,10 @@
 
 void test0() {
 	std::cout << "******* Animal Section *******" << std::endl;
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const Animal* k;
+	//const AAnimal* meta = new AAnimal();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
+	const AAnimal* k;
 
 	k = i;
 	std::cout << j->getType() << " " << std::endl;
@@ -15,11 +15,11 @@ void test0() {
 	j->makeSound(); //will output the cat sound! j->makeSound();
 	i->makeSound(); //will output the cat sound! i->makeSound();
 	k->makeSound(); //will output the cat sound! k->makeSound();
-	meta->makeSound();
+	// meta->makeSound();
 
 	delete i;
 	delete j;
-	delete meta;
+	// delete meta;
 
 	std::cout << "******* WrongAnimal Section *******" << std::endl;
 
@@ -36,7 +36,7 @@ void test0() {
 void test1()
 {
 	const int a = 2;
-	Animal	*animals[a];
+	AAnimal	*animals[a];
 
 	for (int i = 0; i != a / 2; ++i)
 		animals[i] = new Cat();
@@ -68,7 +68,7 @@ void test_shalow() {
 
 void test_fill_animal() {
 	int num = 2;
-	const Animal *arr[num];
+	const AAnimal *arr[num];
 
 	for(int  i = 0; i < num;i++)
 	{

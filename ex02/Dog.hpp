@@ -1,10 +1,10 @@
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal {
+class Dog : public AAnimal {
 
 private:
 
@@ -16,10 +16,10 @@ public:
 
 	Brain	*getBrain() const;
 
-	Cat();
-	Cat(const Cat &cat);
-	Cat &operator = (const Cat &cat);
-	~Cat();
+	Dog();
+	Dog(const Dog &dog);
+	Dog &operator = (const Dog &dog);
+	~Dog();
 
 	void makeSound() const;
 

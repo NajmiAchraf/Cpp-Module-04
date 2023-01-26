@@ -3,7 +3,7 @@
 #*******************************#
 
 OBJ_DIR = objects
-EXE_DIR = executables
+EXE_DIR = executable
 DIRS = $(OBJ_DIR) $(EXE_DIR)
 MKDIR = mkdir -p $(DIRS)
 

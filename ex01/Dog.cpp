@@ -1,5 +1,9 @@
 #include "Dog.hpp"
 
+Brain *Dog::getBrain() const {
+	return (this->brain);
+}
+
 Dog::Dog() : msg("Dog") {
 	this->type = "Dog";
 	this->brain = new Brain();
@@ -13,6 +17,8 @@ Dog::Dog(const Dog &dog) : Animal(dog) {
 
 Dog &Dog::operator = (const Dog &dog) {
 	std::cout << this->message() << "Copy assignment constructor" << std::endl;
+	delete this->brain;
+	this->brain = new Brain(*dog.brain);
 	this->type = dog.getType();
 	return (*this);
 }
