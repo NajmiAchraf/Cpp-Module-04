@@ -4,25 +4,25 @@ std::string AAnimal::getType() const {
 	return (this->type);
 }
 
-AAnimal::AAnimal() : msg("AAnimal"), type("AAnimal"){
-	std::cout << this->message() << "Default constructor" << std::endl;
+AAnimal::AAnimal() : type("AAnimal"){
+	std::cout << "AAnimal ● Default constructor" << std::endl;
 }
 
-AAnimal::AAnimal(const AAnimal &animal) {
-	std::cout << this->message() << "Copy constructor" << std::endl;
-	*this = animal;
+AAnimal::AAnimal(const AAnimal &Aanimal) {
+	std::cout << "AAnimal ● Copy constructor" << std::endl;
+	*this = Aanimal;
 }
 
 AAnimal &AAnimal::operator = (const AAnimal &Aanimal) {
-	std::cout << this->message() << "Copy assignment constructor" << std::endl;
+	std::cout << "AAnimal ● Copy assignment constructor" << std::endl;
 	this->type = Aanimal.getType();
 	return (*this);
 }
 
 AAnimal::~AAnimal() {
-	std::cout << this->message() << "Destructor" << std::endl;
+	std::cout << "AAnimal ● Destructor" << std::endl;
 }
 
-std::string AAnimal::message() {
-	return (this->msg + " ● ");
+void AAnimal::makeSound() const {
+	std::cout << "AAnimal has no sound!" << std::endl;
 }

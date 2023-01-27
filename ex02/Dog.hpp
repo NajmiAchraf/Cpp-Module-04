@@ -9,8 +9,6 @@ class Dog : public AAnimal {
 private:
 
 	Brain		*brain;
-	std::string msg;
-	std::string message();
 
 public:
 

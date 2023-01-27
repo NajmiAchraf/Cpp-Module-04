@@ -5,11 +5,6 @@
 
 class Animal {
 
-private:
-
-	std::string msg;
-	std::string message();
-
 protected:
 
 	std::string type;

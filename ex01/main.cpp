@@ -1,6 +1,5 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 
 void test0() {
 	std::cout << "******* Animal Section *******" << std::endl;
@@ -20,17 +19,6 @@ void test0() {
 	delete i;
 	delete j;
 	delete meta;
-
-	std::cout << "******* WrongAnimal Section *******" << std::endl;
-
-	const WrongAnimal* Bmeta = new WrongAnimal();
-	const WrongAnimal* Bi = new WrongCat();
-
-	Bi->makeSound(); //will output the cat sound! i->makeSound();
-	Bmeta->makeSound();
-
-	delete Bi;
-	delete Bmeta;
 }
 
 void test1()
@@ -44,6 +32,13 @@ void test1()
 		animals[i] = new Dog();
 	for(int i = 0; i != a ; ++i)
 		delete animals[i];
+}
+
+void test2() {
+	Cat cat;
+	{
+		Cat kitten = cat;
+	}
 }
 
 void test_shalow() {
@@ -93,8 +88,9 @@ int main()
 {
 	// test0();
 	// test1();
+	test2();
 	// test_fill_animal();
-	test_shalow();
-	// system("leaks Animal");
+	// test_shalow();
+	system("leaks Animal");
 	return 0;
 }

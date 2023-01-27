@@ -4,20 +4,19 @@ Brain *Cat::getBrain() const {
 	return (this->brain);
 }
 
-Cat::Cat() : msg("Cat") {
+Cat::Cat() {
 	this->type = "Cat";
 	this->brain = new Brain();
-	std::cout << this->message() << "Default constructor" << std::endl;
+	std::cout << "Cat ● Default constructor" << std::endl;
 }
 
 Cat::Cat(const Cat &cat) : AAnimal(cat) {
-	std::cout << this->message() << "Copy constructor" << std::endl;
+	std::cout << "Cat ● Copy constructor" << std::endl;
 	*this = cat;
 }
 
 Cat &Cat::operator = (const Cat &cat) {
-	std::cout << this->message() << "Copy assignment constructor" << std::endl;
-	delete this->brain;
+	std::cout << "Cat ● Copy assignment constructor" << std::endl;
 	this->brain = new Brain(*cat.brain);
 	this->type = cat.getType();
 	return (*this);
@@ -25,13 +24,9 @@ Cat &Cat::operator = (const Cat &cat) {
 
 Cat::~Cat() {
 	delete this->brain;
-	std::cout << this->message() << "Destructor" << std::endl;
+	std::cout << "Cat ● Destructor" << std::endl;
 }
 
 void Cat::makeSound() const {
 	std::cout << "meow ฅ(^◕ᴥ◕^)ฅ" << std::endl;
-}
-
-std::string Cat::message() {
-	return (this->msg + " ● ");
 }

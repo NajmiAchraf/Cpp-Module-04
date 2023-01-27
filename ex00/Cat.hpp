@@ -5,11 +5,6 @@
 
 class Cat : public Animal {
 
-private:
-
-	std::string msg;
-	std::string message();
-
 public:
 
 	Cat();
