@@ -34,6 +34,17 @@ void test1()
 		delete animals[i];
 }
 
+void test2() {
+	Cat cat;
+	{
+		Cat kitten = cat;
+	}
+	Dog dog;
+	{
+		Dog poppy = dog;
+	}
+}
+
 void test_shalow() {
 	Cat cat;
 	Cat klb;
@@ -81,8 +92,9 @@ int main()
 {
 	// test0();
 	// test1();
+	test2();
 	// test_fill_animal();
-	test_shalow();
-	// system("leaks Animal");
+	// test_shalow();
+	system("leaks Animal");
 	return 0;
 }

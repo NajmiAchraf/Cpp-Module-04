@@ -39,6 +39,10 @@ void test2() {
 	{
 		Cat kitten = cat;
 	}
+	Dog dog;
+	{
+		Dog poppy = dog;
+	}
 }
 
 void test_shalow() {
