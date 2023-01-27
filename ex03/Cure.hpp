@@ -8,12 +8,12 @@ class Cure : public AMateria {
 public:
 
 	Cure();
-	Cure(const Cure & Cure);
-	Cure & operator = (const Cure & Cure);
+	Cure(const Cure &Cure);
+	Cure &operator = (const Cure &Cure);
 	virtual ~Cure();
 
 	virtual AMateria	*clone() const;
-	virtual void		use(ICharacter& target);
+	virtual void		use(ICharacter &target);
 
 };
 
