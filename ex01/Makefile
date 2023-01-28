@@ -20,7 +20,7 @@ NAME_UP = $(shell echo $(NOM) | tr  '[:lower:]' '[:upper:]')
 CPP = c++
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
-# CPPFLAGS += -g -fsanitize=address
+CPPFLAGS += -g -fsanitize=address -fsanitize=leak
 
 SRCS = \
 	main.cpp		\

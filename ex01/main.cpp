@@ -37,11 +37,17 @@ void test1()
 void test2() {
 	Cat cat;
 	{
+		std::cout << "--------------------------------"<<std::endl;
 		Cat kitten = cat;
+		std::cout << "--------------------------------"<<std::endl;
+		cat = kitten;
+		std::cout << "--------------------------------"<<std::endl;
 	}
 	Dog dog;
 	{
+		std::cout << "--------------------------------"<<std::endl;
 		Dog poppy = dog;
+		std::cout << "--------------------------------"<<std::endl;
 	}
 }
 
@@ -69,20 +75,20 @@ void test_fill_animal() {
 	int num = 2;
 	const Animal *arr[num];
 
-	for(int  i = 0; i < num;i++)
+	for(int  i = 0; i < num; i++)
 	{
 		if(i%2 == 0)
 			arr[i] = new Cat();
 		else
-			arr[i] = new  Dog();
+			arr[i] = new Dog();
 	}
-	for(int  i = 0; i < num;i++)
+	for(int  i = 0; i < num; i++)
 	{
 		std::cout << "--------------------------------"<<std::endl;
 		arr[i]->makeSound();
 		std::cout << "--------------------------------"<<std::endl;
 	}
-	for(int  i = 0; i < num;i++)
+	for(int  i = 0; i < num; i++)
 	{
 		delete arr[i];
 	}
@@ -90,11 +96,11 @@ void test_fill_animal() {
 
 int main()
 {
-	// test0();
-	// test1();
+	test0();
+	test1();
 	test2();
-	// test_fill_animal();
-	// test_shalow();
-	system("leaks Animal");
+	test_fill_animal();
+	test_shalow();
+	// system("leaks Animal");
 	return 0;
 }

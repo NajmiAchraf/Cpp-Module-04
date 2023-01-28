@@ -5,26 +5,31 @@ Brain *Dog::getBrain() const {
 }
 
 Dog::Dog() {
+	std::cout << "Dog ● Default constructor" << std::endl;
 	this->type = "Dog";
 	this->brain = new Brain();
-	std::cout << "Dog ● Default constructor" << std::endl;
 }
 
 Dog::Dog(const Dog &dog) : Animal(dog) {
 	std::cout << "Dog ● Copy constructor" << std::endl;
+	this->brain = new Brain();
 	*this = dog;
 }
 
 Dog &Dog::operator = (const Dog &dog) {
 	std::cout << "Dog ● Copy assignment constructor" << std::endl;
-	this->brain = new Brain(*dog.brain);
-	this->type = dog.getType();
+	if (this != &dog) {
+		delete this->brain;
+		this->brain = new Brain();
+		*this->brain = *dog.getBrain();
+		this->Animal::operator=(dog);
+	}
 	return (*this);
 }
 
 Dog::~Dog() {
-	delete this->brain;
 	std::cout << "Dog ● Destructor" << std::endl;
+	delete this->brain;
 }
 
 void Dog::makeSound() const {
