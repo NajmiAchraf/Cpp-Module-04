@@ -72,26 +72,13 @@ void test_shalow() {
 }
 
 void test_fill_animal() {
-	int num = 2;
-	const AAnimal *arr[num];
+	Cat	originalCat;
+	Cat	copyCat	= originalCat;
 
-	for(int  i = 0; i < num;i++)
-	{
-		if(i%2 == 0)
-			arr[i] = new Cat();
-		else
-			arr[i] = new  Dog();
-	}
-	for(int  i = 0; i < num;i++)
-	{
-		std::cout << "--------------------------------"<<std::endl;
-		arr[i]->makeSound();
-		std::cout << "--------------------------------"<<std::endl;
-	}
-	for(int  i = 0; i < num;i++)
-	{
-		delete arr[i];
-	}
+	std::cout << "------------------------------------------------------------"<<std::endl;
+	std::cout << std::endl << originalCat.getBrain() << " original VS copy ";
+	std::cout << copyCat.getBrain() << std::endl << std::endl;
+	std::cout << "------------------------------------------------------------"<<std::endl;
 }
 
 int main()
